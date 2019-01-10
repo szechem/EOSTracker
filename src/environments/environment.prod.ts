@@ -1,13 +1,13 @@
 export const environment = {
   production: true,
-  walletUrl: 'https://walleteos.com',
-  votingUrl: 'https://eosportal.io',
-  appName: 'BEOS Tracker',
+  walletUrl: 'https://beos.world/wallet',
+  votingUrl: 'https://beos.world/voting',
+  appName: 'BEOS Testnet Explorer',
   logoUrl: '/assets/logo.png',
-  blockchainUrl: 'https://proxy.eosnode.tools',
-  chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
-  showAds: true,
-  tokensUrl: 'https://raw.githubusercontent.com/eoscafe/eos-airdrops/master/tokens.json',
-  tickerUrl: 'https://api.coinmarketcap.com/v2/ticker/1765/',
-  token: 'EOS'
+  blockchainUrl: 'https://api.beos.world',
+  chainId: '50f1cee2e3750f473e673049c1b828ec10e10eb96c7211a91cc2bd29ae94c6dd',
+  showAds: false,
+  tokensUrl: 'https://',
+  tickerUrl: 'https://',
+  token: 'BEOS'
 };

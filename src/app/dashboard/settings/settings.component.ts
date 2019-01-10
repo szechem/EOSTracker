@@ -62,8 +62,5 @@ export const LANGUAGES = [
 ];
 
 export const APIS = [
-  { name: 'EOS Dublin', endpoint: 'https://api1.eosdublin.io' },
-  { name: 'EOS New York', endpoint: 'http://api.eosnewyork.io' },
-  { name: 'EOS Proxy', endpoint: 'https://proxy.eosnode.tools' },
-  { name: 'Cypherglass', endpoint: 'http://api.cypherglass.com' }
+  { name: 'BEOS Staging', endpoint: 'https://api.beos.world' }
 ]
