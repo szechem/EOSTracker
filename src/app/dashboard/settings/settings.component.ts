@@ -62,5 +62,6 @@ export const LANGUAGES = [
 ];
 
 export const APIS = [
-  { name: 'BEOS Staging', endpoint: 'https://api.beos.world' }
+  { name: 'BEOS MAINNET', endpoint: 'https://api.beos.world' },
+  { name: 'BEOS Testnet', endpoint: 'https://api.testnet.beos.world' }
 ]
