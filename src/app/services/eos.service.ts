@@ -84,6 +84,16 @@ export class EosService {
     ));
   }
 
+  compare(a, b) {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  }
+
   getAccountTokens(name: string): Observable<Result<any[]>> {
     const allTokens$: Observable<any[]> = this.http.get<any[]>(`https://raw.githubusercontent.com/eoscafe/eos-airdrops/master/tokens.json`);
     const allBeosTokens$: Observable<any[]> = from(this.eos.getCurrencyStats('eosio.token', ''));
@@ -107,6 +117,7 @@ export class EosService {
         Object.keys(tokens).forEach((r) => {
           newTokens.push({ account: 'eosio.token', logo: '', logo_lg: '', name: r, symbol: r });
         });
+        newTokens.sort(this.compare);
         return combineLatest(
           newTokens.map(token => getCurrencyBalance.bind(this)(token, name))
         ).pipe(
