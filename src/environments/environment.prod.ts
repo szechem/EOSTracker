@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  walletUrl: 'https://beos.world/wallet',
+  walletUrl: 'https://get.beos.world/wallets/',
   votingUrl: 'https://beos.world/voting',
   appName: 'BEOS Explorer',
   logoUrl: '/assets/logo.png',

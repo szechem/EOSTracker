@@ -86,6 +86,8 @@ export class EosService {
 
   getAccountTokens(name: string): Observable<Result<any[]>> {
     const allTokens$: Observable<any[]> = this.http.get<any[]>(`https://raw.githubusercontent.com/eoscafe/eos-airdrops/master/tokens.json`);
+    const allBeosTokens$: Observable<any[]> = from(this.eos.getCurrencyStats('eosio.token', ''));
+
     const getCurrencyBalance = function (token: any, account: string): Observable<any> {
       return from(this.eos.getCurrencyBalance(token.account, account, token.symbol)).pipe(
         map((balance: string[]) => ({
@@ -98,12 +100,17 @@ export class EosService {
         }))
       );
     };
-    const accountTokens$ = allTokens$.pipe(
+
+    const newTokens = [];
+    const accountTokens$ = allBeosTokens$.pipe(
       switchMap(tokens => {
+        Object.keys(tokens).forEach((r) => {
+          newTokens.push({ account: 'eosio.token', logo: '', logo_lg: '', name: r, symbol: r });
+        });
         return combineLatest(
-          tokens.map(token => getCurrencyBalance.bind(this)(token, name))
+          newTokens.map(token => getCurrencyBalance.bind(this)(token, name))
         ).pipe(
-          map(tokens => tokens.filter(token => token.balance > 0))
+          map(tokens => tokens)
         )
       })
     );

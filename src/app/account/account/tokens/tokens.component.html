@@ -12,7 +12,6 @@
           <ng-container matColumnDef="logo">
             <th mat-header-cell *matHeaderCellDef>{{ 'Logo' | translate }}</th>
             <td mat-cell *matCellDef="let token">
-              <img [src]="token.logo" [alt]="token.name" style="width:64px;height:64px;display:block;">
             </td>
           </ng-container>
           <ng-container matColumnDef="name">
