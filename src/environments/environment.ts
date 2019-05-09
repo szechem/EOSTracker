@@ -4,15 +4,15 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  walletUrl: 'https://portal.telosgermany.io',
-  votingUrl: 'https://telos.eosx.io/tools/vote',
-  appName: 'Telos Testnet Explorer',
+  production: true,
+  walletUrl: 'https://get.beos.world/wallets/',
+  votingUrl: 'https://beos.world/voting',
+  appName: 'BEOS Explorer',
   logoUrl: '/assets/logo.png',
-  blockchainUrl: 'https://testnet.eos.miami',
-  chainId: 'e17615decaecd202a365f4c029f206eee98511979de8a5756317e2469f2289e3',
+  blockchainUrl: 'https://api.beos.world',
+  chainId: 'cbef47b0b26d2b8407ec6a6f91284100ec32d288a39d4b4bbd49655f7c484112',
   showAds: false,
-  tokensUrl: 'https://raw.githubusercontent.com/eoscafe/eos-airdrops/master/tokens.json',
-  tickerUrl: 'https://api.coinmarketcap.com/v2/ticker/1765/',
-  token: 'TLOS'
+  tokensUrl: 'https://',
+  tickerUrl: 'https://',
+  token: 'BEOS'
 };
